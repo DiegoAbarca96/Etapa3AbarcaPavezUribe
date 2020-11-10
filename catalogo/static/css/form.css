@@ -1,0 +1,31 @@
+.alinea{
+	margin: 4px;
+}
+
+#atra {
+    width: 980px;
+    height: 1100px;
+    text-align: left;
+	margin: auto;
+    position: relative;
+    padding: 4px 4px 0 4px;
+	background: rgba(24,24,24, 0.7)
+	
+}
+
+#upper {
+	width: 980px;
+	height: 220px;
+    margin: 0 auto 0 auto;
+    position: relative;
+	background-color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../fondo/1.jpg);   
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+	color: #FFFFFF;
+}

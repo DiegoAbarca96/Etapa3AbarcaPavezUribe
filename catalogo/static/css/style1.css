@@ -1,0 +1,60 @@
+body {
+font-family: Calibri, Times new roman, sans-serif;
+color: white;
+margin: 0;
+background: url(../img/imagen.jpg);
+background-size: cover;
+background-attachment: fixed;
+}
+#cont{
+	margin: auto;
+	width: 360px;
+	height: 172px;
+}
+h3{
+	color: black;
+	text-shadow: 0 0 4px white, 0 0 5px white;
+}
+p{
+	color: black;
+	text-shadow: 0 0 4px white, 0 0 5px white;
+}
+p1{
+	color: blue;
+	text-shadow: 0 0 4px white, 0 0 5px white;
+}
+span{
+	text-shadow: 0 0 4px white, 0 0 5px white;
+}
+#menu{
+	border: none;
+	width: 100%;
+	color: white;
+	font-size: 20px;
+	background:  #1a2537;
+	padding: 15px 20px;
+	border-radius: 5px;
+}
+
+#Centro{
+	margin: 20px auto auto auto;
+	width: 600px;
+	height: 880px;
+	border: 2px;
+	border-color: black;
+	background-color: rgba(24,24,24, 0.7);
+	border-radius: 5px;
+}
+
+.centrar{
+	margin-left: 150px;
+	color: white;
+}
+
+#upper {
+	width: 600px;
+	height: 100px;
+    margin: auto;
+    position: relative;
+	background-color: black;
+}
