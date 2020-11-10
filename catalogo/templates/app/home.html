@@ -1,5 +1,5 @@
 {% extends 'app/base.html' %}
-
+{% load static %}
 {% block contenido %}
 <div id="cont">
     <br>
@@ -16,7 +16,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
             <a href="pagina1.html" class="btn-primary">
-              <img class="d-block w-100" src="img/imagen1.png" alt="" height="172">
+              <img class="d-block w-100" src="{% static 'app/img/imagen1.png' %}" alt="" height="172">
              </a>
                 <div class="carousel-caption">
                   <h3>Acer</h3>
@@ -24,7 +24,7 @@
             </div>
             <div class="carousel-item">
                 <a href="pagina2.html" class="btn-primary">
-                    <img class="d-block w-100" src="img2/imagen.jpg" alt="">
+                    <img class="d-block w-100" src="{% static 'app/img2/imagen.jpg' %}" alt="">
                 </a>
                 <div class="carousel-caption">
                   <h3>Lenovo</h3>
@@ -32,7 +32,7 @@
             </div>
             <div class="carousel-item">
             <a href="pagina3.html" class="btn-primary">
-              <img class="d-block w-100" src="img3/imagen.jpg" alt="">
+              <img class="d-block w-100" src="{% static 'app/img3/imagen.jpg' %}" alt="">
             </a>
                 <div class="carousel-caption">
                   <h3>Asus</h3>
@@ -49,8 +49,10 @@
         </div>
     </div>
 </div>
+
 <br>
 <br>
+
 <div id="cont">
     <a class="centrar">Televisores</a>
     <div class="container">
@@ -64,7 +66,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
             <a href="pagina4.html" class="btn-primary">
-              <img class="d-block w-100" src="img4/imagen.jpg" alt="">
+              <img class="d-block w-100" src="{% static 'app/img4/imagen.jpg' %}" alt="">
              </a>
                 <div class="carousel-caption">
                   <h3>Samsung</h3>
@@ -72,7 +74,7 @@
             </div>
             <div class="carousel-item">
                 <a href="pagina5.html" class="btn-primary">
-                    <img class="d-block w-100" src="img5/imagen.jpg" alt="">
+                    <img class="d-block w-100" src="{% static 'app/img5/imagen.jpg' %}" alt="">
                 </a>
                 <div class="carousel-caption">
                   <h3>Hyundai</h3>
@@ -80,7 +82,7 @@
             </div>
             <div class="carousel-item">
             <a href="pagina6.html" class="btn-primary">
-              <img class="d-block w-100" src="img6/imagen.jpg" alt="">
+              <img class="d-block w-100" src="{% static 'app/img6/imagen.jpg' %}" alt="">
             </a>
                 <div class="carousel-caption">
                   <h3>Samsung</h3>
@@ -97,7 +99,9 @@
         </div>
     </div>
 </div>
+
 <br>
+
 <div id="cont">
     <a class="centrar">Celulares</a>
     <div class="container">
@@ -111,7 +115,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
             <a href="pagina7.html" class="btn-primary">
-              <img class="d-block w-100" src="img7/imagen.jpg" alt="">
+              <img class="d-block w-100" src="{% static 'app/img7/imagen.jpg' %}" alt="">
              </a>
                 <div class="carousel-caption">
                   <h3>Huawei</h3>
@@ -119,7 +123,7 @@
             </div>
             <div class="carousel-item">
                 <a href="pagina8.html" class="btn-primary">
-                    <img class="d-block w-100" src="img8/imagen.jpg" alt="">
+                    <img class="d-block w-100" src="{% static 'app/img8/imagen.jpg' %}" alt="">
                 </a>
                 <div class="carousel-caption">
                   <h3>Motorola</h3>
@@ -127,7 +131,7 @@
             </div>
             <div class="carousel-item">
             <a href="pagina9.html" class="btn-primary">
-              <img class="d-block w-100" src="img9/imagen.jpg" alt="">
+              <img class="d-block w-100" src="{% static 'app/img9/imagen.jpg' %}" alt="">
             </a>
                 <div class="carousel-caption">
                   <h3>Apple</h3>
@@ -144,4 +148,5 @@
           </a>
         </div>
     </div>
+</div>
 {% endblock %}
