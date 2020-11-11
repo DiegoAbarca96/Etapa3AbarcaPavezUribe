@@ -8,3 +8,10 @@ def home(request):
         request,
         'app/home.html'
     )
+
+def acer(request):
+    
+    return render(
+        request,
+        'app/contenido/acer.html'
+    )

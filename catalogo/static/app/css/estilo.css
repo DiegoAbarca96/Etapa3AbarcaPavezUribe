@@ -1,23 +1,28 @@
-#center{
-	background-color: white;
-	width: 1500px;
-	height: 180px;
-	float: left;
-}
 body{
     margin: 0;
     padding: 0;
+    background: rgba(37, 36, 36, 0.7);
     background: url(../fondo/1.jpg);   
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+    color: white;
+}
+
+#center{
+	width: 1500px;
+	height: 180px;
+    float: left;
+    background: rgba(37, 36, 36, 0.7);
 }
 #upper {
-	width: 980px;
-	height: 220px;
+	width: 600px;
+	height: 100px;
     margin: 0 auto 0 auto;
     position: relative;
-	background-color: black;
+    background-color: black;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 #atra {
     width: 980px;
@@ -26,6 +31,6 @@ body{
 	margin: auto;
     position: relative;
     padding: 4px 4px 0 4px;
-	background: rgba(24,24,24, 0.7)
+	background: rgba(24,24,24, 0.7);
 	
 }
