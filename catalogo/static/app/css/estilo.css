@@ -9,11 +9,14 @@ body{
     color: white;
 }
 
-#center{
+#center {
 	width: 1500px;
 	height: 180px;
     float: left;
+    margin: 0 auto 0 auto;
     background: rgba(37, 36, 36, 0.7);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #upper {
 	width: 600px;

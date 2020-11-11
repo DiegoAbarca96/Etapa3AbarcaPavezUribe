@@ -13,5 +13,19 @@ def acer(request):
     
     return render(
         request,
-        'app/contenido/acer.html'
+        'app/contenido/pc1.html'
+    )
+
+def lenovo(request):
+    
+    return render(
+        request,
+        'app/contenido/pc2.html'
+    )
+
+def asus(request):
+    
+    return render(
+        request,
+        'app/contenido/pc3.html'
     )
