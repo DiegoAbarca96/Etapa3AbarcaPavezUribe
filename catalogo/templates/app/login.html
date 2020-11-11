@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title></title> 
-	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
-	<link rel="stylesheet" href="css/estilos.css">
-</head>  
+{% extends 'app/baselog.html' %}
 
-<body>
-    <form class="formulario" action="index.html">
+{% block contenido %}
+
+
+<form class="formulario" action=".">
     <h1>Iniciar sesión</h1>
      <div class="contenedor">
          <div class="input-contenedor">
@@ -22,8 +16,7 @@
          </div>
          <input type="submit" value="Inicio de sesión" class="button" >
          <p>Al registrarte podrás acceder a las mejores referencias tecnológicas.</p>
-         <p>¿Aún no tienes una cuenta? <a class="link" href="registrar.html">Regístrate </a></p>
+         <p>¿Aún no tienes una cuenta? <a class="link" href="registro">Regístrate </a></p>
      </div>
     </form>
-</body>
-</html>
+{% endblock %}

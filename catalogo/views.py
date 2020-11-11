@@ -29,3 +29,17 @@ def asus(request):
         request,
         'app/contenido/pc3.html'
     )
+
+def login(request):
+    
+    return render(
+        request,
+        'app/login.html'
+    )
+
+def registro(request):
+    
+    return render(
+        request,
+        'app/registro.html'
+    )
