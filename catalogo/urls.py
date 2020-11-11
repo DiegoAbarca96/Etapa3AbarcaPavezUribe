@@ -8,4 +8,5 @@ urlpatterns = [
     path('contenido/asus', views.asus, name='asus'),
     path('', views.login, name='login'),
     path('registro', views.registro, name='registro'),
+    path('producto', views.producto, name='producto'),
 ]

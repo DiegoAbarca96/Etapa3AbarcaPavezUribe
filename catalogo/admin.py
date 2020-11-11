@@ -1,7 +1,8 @@
 from django.contrib import admin
-from .models import Categoria, Especificaciones, Televisores
+from .models import Categoria, Notebooks, Televisores, Celulares
 # Register your models here.
 
 admin.site.register(Categoria)
-admin.site.register(Especificaciones)
+admin.site.register(Notebooks)
 admin.site.register(Televisores)
+admin.site.register(Celulares)
