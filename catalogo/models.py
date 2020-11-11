@@ -7,7 +7,24 @@ class Categoria(models.Model):
     def __str__(self):
         return self.modelo
 
+class Televisores(models.Model):
+    nombre = models.CharField(max_length=60)
+    tipo = models.CharField(max_length=15)
+    tamanio = models.CharField(max_length=15)
+    resolucion = models.CharField(max_length=40)
+    smarttv = models.BooleanField()
+    tasarefresco = models.CharField(max_length=15)
+    usb = models.CharField(max_length=15)
+    hdmi = models.CharField(max_length=15)
+    imagena = models.ImageField(upload_to="especificaciones", null=True)
+    imagenb = models.ImageField(upload_to="especificaciones", null=True)
+    imagenc = models.ImageField(upload_to="especificaciones", null=True)
+
+    def __str__(self):
+        return self.nombre
+        
 class Especificaciones(models.Model):
+    nombre = models.CharField(max_length=60)
     procesador = models.CharField(max_length=30)
     velocidadProc = models.CharField(max_length=30)
     cantNucleo = models.CharField(max_length=30)
@@ -22,7 +39,10 @@ class Especificaciones(models.Model):
     hdmi = models.CharField(max_length=30)
     sistOperativo = models.CharField(max_length=30)
     bateria = models.CharField(max_length=50)
-    imagen = models.ImageField(upload_to="especificaciones", null=True)
+    recomendacion = models.TextField()
+    imagena = models.ImageField(upload_to="especificaciones", null=True)
+    imagenb = models.ImageField(upload_to="especificaciones", null=True)
+    imagenc = models.ImageField(upload_to="especificaciones", null=True)
 
     def __str__(self):
-        return self.procesador
+        return self.nombre
