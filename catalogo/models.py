@@ -22,6 +22,7 @@ class Especificaciones(models.Model):
     hdmi = models.CharField(max_length=30)
     sistOperativo = models.CharField(max_length=30)
     bateria = models.CharField(max_length=50)
+    imagen = models.ImageField(upload_to="especificaciones", null=True)
 
     def __str__(self):
         return self.procesador
