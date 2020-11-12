@@ -24,9 +24,8 @@ def registro(request):
         if formulario.is_valid():
             formulario.save()
             user = authenticate(username=formulario.cleaned_data["username"], password=formulario.cleaned_data["password1"])
-            login(request, user)
             return redirect(to="login")
-    return render(request,'app/registro.html', data)
+    return render(request,'registration/registro.html', data)
 
 def agregar_producto(request):
     
