@@ -1,21 +1,64 @@
-{% extends 'app/baselog.html' %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+{% extends 'app/baseuser.html' %}
+
+{% block js %}
+
+<script>
+    function eliminarProducto(id) {
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text":"esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No, Cancelar",
+            "confirmButtonText":"Si, Eliminar",
+            "reverseButton":true,
+            "confirmButtonColor":"#dc3545"
+        })
+        .then(function(result) {
+            if(result.isConfirmed) {
+                window.location.href = "eliminar-producto/"+id+"/"
+            }
+        })
+    }
+
+</script>
+{% endblock %} 
 
 {% block contenido %}
+    <div class="card">
+        <div class="card body">
+            <b>
+                Listado de productos
+            </b>
+            <table class="table table-striped table-hover table-responsive-sm">
 
-    <table>
-        <tr>
-            <th>Nombre</th>
-            <th>Categoria</th>
-            <th>Marca</th>
-            <th>Imagen</th>
-        </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Categoria</th>
+                    <th>Marca</th>
+                    <th>Opciones</th>
+                </tr>
+        
+                {% for prod in productos %}
+        
+                    <tr>
+                        <td>{{ prod.nombre | title }}</td>
+                        <td>{{ prod.categoria | title }}</td>
+                        <td>{{ prod.marca | title }}</td>
+                        <th>
+                            <a href="{% url 'modificar_producto' prod.id %}" class="btn btn-info btn-sm">Modificar</a>
+                            <a href="#" onclick="eliminarProducto({{prod.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                        </th>
+                    </tr>
+        
+                {% endfor %}
+                
+            </table>
 
-        {% for p in productos %}
-            <td>{{ p.Nombre }}</td>
-            <td>{{ p.Categoria }}</td>
-            <td>{{ p.Marca }}</td>
-            <td>{{ p.Imagen }}</td>
-        {% endfor %}
-    </table>
+        </div>
+    </div>
+    
 
 {% endblock %}

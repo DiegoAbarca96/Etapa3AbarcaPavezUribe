@@ -13,26 +13,41 @@
 	<a href=".">
 		<img class="imgfilter" src="{% static 'app/fondo/logo.png' %}" height="70px">
 	</a>
+	<div class="botones" style="float: right; margin-top: 15px; margin-right: 15px;">
+		<a href="agregar-producto">
+			<button type="button" class="btn btn-primary">Agregar Producto</button>
+		</a>
+		<a href="listar-productos">
+			<button type="button" class="btn btn-primary">Listar Productos</button>
+		</a>
+		<a href=".">
+			<button type="button" class="btn btn-primary">Cerrar sesion</button>
+		</a>
+	</div>
   </div> 
 <body>
 
 	</div>
+	{% if messages %}
+		{% for m in messages %}
+			{{m}}
+		{% endfor %}
+	{% endif %}
     {% block contenido %}
     {% endblock %}
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-	{% if messages %}
-		{% for m in messages %}
-			<script>
-				Swal.fire({
-				"title": "Felicitaciones",
-				"text": "{{m}}",
-				"icbn": "success"
-			})
-			</script>
-		{% endfor %}
-	{% endif %}
-
+		{% if messages %}
+			{% for m in messages %}
+				<script>
+					Swal.fire({
+					"title": "Felicitaciones",
+					"text": "{{m}}",
+					"icbn": "success"
+				})
+				</script>
+			{% endfor %}
+		{% endif %}
+		
 	{% block js %}
 	{% endblock %}
 </body>
