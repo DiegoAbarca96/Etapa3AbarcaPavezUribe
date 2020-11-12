@@ -8,5 +8,6 @@ urlpatterns = [
     path('contenido/asus', views.asus, name='asus'),
     path('login', views.login, name='login'),
     path('registro', views.registro, name='registro'),
-    path('producto', views.producto, name='producto'),
+    path('agregar_producto', views.agregar_producto, name='agregar_producto'),
+    path('listar_productos', views.listar_productos, name='listar_productos'),
 ]

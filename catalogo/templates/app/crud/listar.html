@@ -1,0 +1,21 @@
+{% extends 'app/baselog.html' %}
+
+{% block contenido %}
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Categoria</th>
+            <th>Marca</th>
+            <th>Imagen</th>
+        </tr>
+
+        {% for p in productos %}
+            <td>{{ p.Nombre }}</td>
+            <td>{{ p.Categoria }}</td>
+            <td>{{ p.Marca }}</td>
+            <td>{{ p.Imagen }}</td>
+        {% endfor %}
+    </table>
+
+{% endblock %}

@@ -54,11 +54,11 @@ span{
 #upper {
 	width: 900px;
 	height: 100px;
-    margin: auto;
-    position: relative;
+	margin: auto;
+	position: relative;
 }
 
-.botones{
+.botones {
 	float: right;
 	margin-top: 40px;
 }

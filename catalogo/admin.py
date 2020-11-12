@@ -1,8 +1,5 @@
 from django.contrib import admin
-from .models import Categoria, Notebooks, Televisores, Celulares
+from .models import Producto
 # Register your models here.
 
-admin.site.register(Categoria)
-admin.site.register(Notebooks)
-admin.site.register(Televisores)
-admin.site.register(Celulares)
+admin.site.register(Producto)

@@ -1,25 +1,8 @@
 from django.shortcuts import render
-from .models import Notebooks, Televisores, Celulares
+from .models import Producto
+from .forms import ProductoForm
 
 # Create your views here.
-
-def producto(request):
-    cel_info=Celulares.objects.all()
-    note_info=Televisores.objects.all()
-    tel_info=Notebooks.objects.all()
-
-    cel_info={'cel_info':cel_info},
-    note_info={'note_info':note_info},
-    tel_info={'tel_info':tel_info}
-    
-    return render(
-        request,
-        'app/contenido/producto.html',
-        cel_info,
-        note_info,
-        tel_info
-        
-    )
 
 def home(request):
 
@@ -62,3 +45,28 @@ def registro(request):
         request,
         'app/registro.html'
     )
+
+def agregar_producto(request):
+    
+    data = {
+        'form': ProductoForm()
+    }
+
+    if  request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Guardado correctamente!"
+        else:
+            data["form"] = formulario
+    return render(request, 'app/crud/agregar.html', data)
+
+def listar_productos(request):
+    productos = Producto.objects.all()
+
+    data = {
+        'productos': productos
+    }
+
+
+    return render(request, 'app/crud/listar.html', data)
