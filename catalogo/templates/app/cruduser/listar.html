@@ -1,0 +1,64 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+{% extends 'app/baseuser.html' %}
+
+{% block js %}
+
+<script>
+    function eliminarProducto(id) {
+        Swal.fire({
+            "title":"¿Estas seguro?",
+            "text":"esta accion no se puede deshacer",
+            "icon":"question",
+            "showCancelButton":true,
+            "cancelButtonText":"No, Cancelar",
+            "confirmButtonText":"Si, Eliminar",
+            "reverseButton":true,
+            "confirmButtonColor":"#dc3545"
+        })
+        .then(function(result) {
+            if(result.isConfirmed) {
+                window.location.href = "eliminar-usuario/"+id+"/"
+            }
+        })
+    }
+
+</script>
+{% endblock %} 
+
+{% block contenido %}
+    <div class="card">
+        <div class="card body">
+            <b>
+                Listado de usuario
+            </b>
+            <table class="table table-striped table-hover table-responsive-sm">
+
+                <tr>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Staff</th>
+                    <th>Opciones</th>
+                </tr>
+        
+                {% for user in usuarios %}
+        
+                    <tr>
+                        <td>{{ user.username | title }}</td>
+                        <td>{{ user.email | title }}</td>
+                        <td>{{ user.is_staff | title }}</td>
+                        <th>
+                            <a href="{% url 'modificar_usuario' user.id %}" class="btn btn-info btn-sm">Modificar</a>
+                            <a href="#" onclick="eliminarProducto({{user.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                        </th>
+                    </tr>
+        
+                {% endfor %}
+                
+            </table>
+
+        </div>
+    </div>
+    
+
+{% endblock %}

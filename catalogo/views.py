@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Producto
-from .forms import ProductoForm, CustomUserCreationForm, ContactoForm
+from .forms import ProductoForm, CustomUserCreationForm, ContactoForm, UserForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
@@ -75,6 +75,38 @@ def eliminar_producto(request, id):
     producto.delete()
     messages.success(request, "Eliminado correctamente")
     return redirect(to="listar_productos")
+
+def eliminar_usuario(request, id):
+    usuario = get_object_or_404(User, id=id)
+    usuario.delete()
+    messages.success(request, "Eliminado correctamente")
+    return redirect(to="listar_usuarios")
+
+def listar_usuarios(request):
+    usuarios = User.objects.all()
+
+    context = {'usuarios':usuarios}
+
+
+    return render(request, 'app/cruduser/listar.html', context)
+
+def modificar_usuario(request, id):
+
+    usuario = get_object_or_404(User, id=id)
+
+    data = {
+        'form': UserForm(instance=usuario)
+    }
+
+    if  request.method == 'POST':
+        formulario = UserForm(data=request.POST, instance=usuario, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request, "Modificado correctamente")
+            return redirect(to="listar_usuarios")
+        data["form"] = formulario
+
+    return render(request, 'app/cruduser/modificar.html', data)
 
 def contacto(request):
     data = {

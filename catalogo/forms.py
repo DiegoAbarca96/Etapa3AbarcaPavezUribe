@@ -15,6 +15,12 @@ class ContactoForm(forms.ModelForm):
         model = Contacto 
         fields = ["nombre", "email", "tipo_consulta", "mensaje"]
 
+class UserForm(UserCreationForm):
+    
+    class Meta:
+        model = User
+        fields = ['username', "first_name", "last_name", "email", "password1", "password2", "is_staff"]
+
 class CustomUserCreationForm(UserCreationForm):
     
     class Meta:
