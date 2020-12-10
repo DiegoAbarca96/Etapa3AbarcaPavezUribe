@@ -3,6 +3,8 @@ from .models import Producto
 from .forms import ProductoForm, CustomUserCreationForm, ContactoForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.models import User
+from django.db.models import Q
 
 # Create your views here.
 

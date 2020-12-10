@@ -12,15 +12,33 @@
 <div class="w3-container w3-teal" id="supreme" style="margin-bottom: 20px;">
 		<img class="imgfilter" src="{% static 'app/fondo/logo.png' %}" height="70px">
 	<div class="botones" style="float: right; margin-top: 15px; margin-right: 15px;">
-		<a href="agregar-producto">
-			<button type="button" class="btn btn-primary">Agregar Producto</button>
-		</a>
-		<a href="listar-productos">
-			<button type="button" class="btn btn-primary">Listar Productos</button>
-		</a>
-		<a href=".">
-			<button type="button" class="btn btn-primary">Cerrar sesion</button>
-		</a>
+		{% if request.user.is_superuser %}
+			<a href="http://127.0.0.1:8000/catalogo/">
+				<button type="button" class="btn btn-primary">Inicio</button>
+			</a>
+                <a href="agregar-producto">
+                    <button type="button" class="btn btn-primary">Agregar Producto</button>
+                </a>
+                <a href="listar-productos">
+                    <button type="button" class="btn btn-primary">Listar Productos</button>
+                </a>
+                <a href="lista_usuarios">
+                    <button type="button" class="btn btn-primary">Lista de usuarios</button>
+                </a>
+                <a href="http://127.0.0.1:8000/accounts/logout">
+                    <button type="button" class="btn btn-primary">Cerrar Sesion</button>
+                </a>
+			{% elif request.user.is_staff %}
+				<a href="http://127.0.0.1:8000/catalogo/">
+					<button type="button" class="btn btn-primary">Inicio</button>
+				</a>
+                <a href="agregar-producto">
+                    <button type="button" class="btn btn-primary">Agregar Producto</button>
+                </a>
+                <a href="http://127.0.0.1:8000/accounts/logout">
+                    <button type="button" class="btn btn-primary">Cerrar Sesion</button>
+                </a>
+            {% endif %}
 	</div>
   </div> 
 <body>
